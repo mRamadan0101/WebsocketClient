@@ -33,7 +33,7 @@ class WebsocketClient
     public function emit($action, $data)
     {
         $this->connect();
-        $frame = '42'.json_encode([$action, $data]));
+        $frame = '42'.json_encode([$action, $data]);
         return fwrite($this->socket, $this->hybi10Encode($frame));
     }
 
